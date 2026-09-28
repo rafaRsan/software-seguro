@@ -1,7 +1,7 @@
 ## Laboratorio: Ventas
 
 ### Objetivo
-Contabilizar la cantidad exacta de ventas ocultas de la competencia manipulando parámetros de la URL y generar un hash MD5 del total resultante.
+Contabilizar la cantidad exacta de ventas y generar un hash MD5 del total resultante.
 
 ### Herramientas utilizadas
 Burp Suite (Módulos Proxy e Intruder), Generador MD5 local.
