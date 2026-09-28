@@ -1,4 +1,4 @@
-## 1. Laboratorio: Ventas
+## Laboratorio: Ventas
 
 ### Objetivo
 Contabilizar la cantidad exacta de ventas ocultas de la competencia manipulando parámetros de la URL y generar un hash MD5 del total resultante.
