@@ -28,7 +28,7 @@ identificadores principalmente en dos bases de datos globales:
     *   La **NVD (National Vulnerability Database)**, mantenida por el NIST del gobierno de Estados Unidos,
       que además añade métricas como el puntaje CVSS.
 
-## 4. Herramientas Automatizadas de la Industria
+## Herramientas Automatizadas de la Industria
 Para detectar vulnerabilidades que ya tienen un CVE asignado en una infraestructura, 
 la industria utiliza escáneres automatizados. Dos ejemplos destacados son:
 1.  **Nessus:** Uno de los escáneres de vulnerabilidades comerciales más completos y utilizados en 
