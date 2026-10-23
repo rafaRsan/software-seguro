@@ -1,19 +1,15 @@
 # Objetivo 3: Peligros del "Directory Listing" (Indexación de Directorios)
 
-## 1. Explicación Técnica del Problema
-
 El **Directory Listing** (o listado de directorios) es una funcionalidad presente en la mayoría de los servidores web (como Apache, Nginx o IIS) que, por defecto o por mala configuración del administrador, muestra una lista del contenido de un directorio cuando no existe un archivo de índice primario.
 
 ### ¿Qué ocurre técnicamente cuando un atacante navega a esta ruta?
 
-1. **Ausencia del archivo de índice:** En el flujo normal, cuando un usuario solicita un directorio (por ejemplo, `https://ejemplo.com/uploads/`), el servidor web busca automáticamente archivos predeterminados configurados en su directiva de índice, tales como `index.html`, `index.php`, `index.htm` o `default.aspx`.
-2. **Generación dinámica de respuesta:** Si ninguno de estos archivos existe dentro del directorio solicitado y la directiva de *Directory Listing* está **activa**, el servidor web no devuelve un error de restricción de acceso (`403 Forbidden`). En su lugar, el motor del servidor genera dinámicamente una página HTML (generalmente con el título `Index of /nombre-directorio`).
-3. **Exposición visual:** La página devuelta renderiza en el navegador del atacante una estructura en árbol con todos los archivos y subcarpetas contenidos en esa ruta del sistema de archivos, incluyendo detalles como el tamaño, la extensión y la fecha de última modificación.
-4. **Facilidad de exploración:** El atacante puede navegar directamente haciendo clic en los archivos exposed o utilizando herramientas automatizadas de *fuzzing* (como `ffuf`, `feroxbuster` o *Google Dorks* como `intitle:"Index of"`) para enumerar y descargar masivamente todo el contenido sin necesidad de adivinar nombres de archivos.
+En el flujo normal, cuando un usuario solicita un directorio (por ejemplo, `https://equisde.com/uploads/`), el servidor web busca automáticamente archivos predeterminados configurados en su directiva de índice, tales como `index.html`, `index.php`, `index.htm` o `default.aspx`; si ninguno de estos archivos existe dentro del directorio solicitado y la directiva de *Directory Listing* está **activa**, el servidor no devuelve un error de restricción de acceso (`403 Forbidden`). En su lugar, el motor del servidor genera automaticamente un HTML (generalmente con el título `Index of /nombre-directorio`). La página generada renderiza en el navegador del atacante una estructura en árbol con todos los archivos y subcarpetas contenidos en esa ruta del sistema de archivos, incluyendo detalles como el tamaño, la extensión y la fecha de última modificación.
+El atacante puede navegar directamente haciendo clic en los archivos exposed o utilizando herramientas automatizadas de *fuzzing* (como `ffuf`, `feroxbuster` o *Google Dorks* como `intitle:"Index of"`) para enumerar y descargar masivamente todo el contenido sin necesidad de adivinar nombres de archivos.
 
 ---
 
-## 2. Tipos de Archivos Sensibles Expuestos
+## Tipos de Archivos Sensibles Expuestos
 
 Cuando el Directory Listing queda expuesto, un atacante puede acceder libremente a archivos que comprometen la confidencialidad e integridad de la aplicación:
 
@@ -25,7 +21,7 @@ Cuando el Directory Listing queda expuesto, un atacante puede acceder libremente
 
 ---
 
-## 3. Mitigación y Buenas Prácticas
+## Mitigación y Buenas Prácticas
 
 La remediación de este error de configuración debe abordarse en múltiples capas:
 
