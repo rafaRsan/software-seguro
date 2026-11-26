@@ -1,4 +1,5 @@
 # Análisis Técnico: El Punto Ciego de los Escáneres Automatizados frente a la Lógica de Negocio
+(el humano es necesario jaja)
 
 ## 1. Introducción
 
