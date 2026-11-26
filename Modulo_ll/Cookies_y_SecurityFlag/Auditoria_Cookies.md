@@ -75,7 +75,7 @@ La bandera `HttpOnly` protege la **confidencialidad del identificador de sesión
 
 Técnicamente, instruye al navegador para que oculte esa cookie ante APIs del DOM como `document.cookie`. Su función principal es **mitigar el impacto de una vulnerabilidad de Cross-Site Scripting (XSS)**: si un atacante logra inyectar y ejecutar código JavaScript malicioso en la aplicación web, el navegador bloqueará cualquier intento del script por leer y exfiltrar la cookie de sesión hacia un servidor externo para realizar un *Session Hijacking* (secuestro de sesión).
 
-*(Nota técnica: `HttpOnly` no previene que exista ni que se ejecute un XSS —un atacante aún podría realizar acciones en nombre de la víctima dentro de la misma página—, pero impide el robo directo del token de sesión).*
+*(Nota: `HttpOnly` no previene que exista ni que se ejecute un XSS —un atacante aún podría realizar acciones en nombre de la víctima dentro de la misma página—, pero impide el robo directo del token de sesión).*
 
 ---
 
