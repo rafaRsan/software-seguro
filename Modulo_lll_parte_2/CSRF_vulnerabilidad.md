@@ -1,10 +1,5 @@
 # Anatomía de un Ataque CSRF (Cross-Site Request Forgery)
 
-> **Aclaración rápida para no confundirlos:** 
-> * **CSRF (Client-Side):** Engañás al **navegador de una víctima** para que ejecute una acción en un sitio donde ya tiene sesión abierta, usando sus propias cookies.
-> * **SSRF (Server-Side):** Engañás al **servidor web** para que haga peticiones hacia recursos internos (como `localhost`, redes privadas o metadatos en la nube) a los que vos como atacante no tenés acceso directo desde internet.
-
----
 
 ## 1. ¿Por qué ocurre el fallo de seguridad? (La raíz del problema)
 
