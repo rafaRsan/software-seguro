@@ -1,6 +1,6 @@
 # Comparación Técnica Directa: XSS vs. CSRF
 
-Aunque tanto el **Cross-Site Scripting (XSS)** como el **Cross-Site Request Forgery (CSRF)** se ejecutan en el contexto del navegador de la víctima y buscan comprometer su sesión o integridad dentro de una aplicación web, **sus arquitecturas de ataque, vectores de origen y modelos de confianza son diametralmente opuestos**.
+Aunque tanto el **Cross-Site Scripting (XSS)** como el **Cross-Site Request Forgery (CSRF)** se ejecutan en el contexto del navegador de la víctima y buscan comprometer su sesión o integridad dentro de una aplicación web, **sus arquitecturas de ataque, vectores de origen y modelos de confianza son opuestas**.
 
 ---
 
@@ -11,7 +11,7 @@ La distinción técnica esencial radica en **quién confía en quién** de maner
 * **XSS (Fallo de confianza del Usuario hacia el Sitio):** El navegador de la víctima **confía ciegamente en todo el código que recibe desde el servidor legítimo** (`banco.com`). El atacante logra inyectar código JavaScript malicioso dentro de la aplicación vulnerable; cuando el navegador lo recibe, asume que es parte del código original del sitio y lo ejecuta con todos los privilegios de ese origen (*Same-Origin*).
 * **CSRF (Fallo de confianza del Sitio hacia el Usuario):** El servidor legítimo (`banco.com`) **confía ciegamente en cualquier petición HTTP que llegue acompañada de una cookie de sesión válida**. El atacante engaña al navegador de la víctima desde un sitio externo (`evil.com`) para que dispare una petición no deseada hacia el servidor legítimo, aprovechando que el navegador adjunta automáticamente las cookies del dominio destino.
 
-> **Resumen en una línea:** En **XSS**, el atacante ejecuta código *dentro* del dominio legítimo (rompiendo la *Same-Origin Policy* desde adentro). En **CSRF**, el atacante fuerza acciones *desde fuera* del dominio legítimo, sin poder leer jamás la respuesta del servidor.
+> **En criollo por que doy vueltas:** En **XSS**, el atacante ejecuta código *dentro* del dominio legítimo (rompiendo la *Same-Origin Policy* desde adentro). En **CSRF**, el atacante fuerza acciones *desde fuera* del dominio legítimo, sin poder leer jamás la respuesta del servidor.
 
 ---
 
